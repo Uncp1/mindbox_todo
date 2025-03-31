@@ -1,0 +1,29 @@
+.App {
+  width: 550px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.title {
+  color: rgba(175, 47, 47, 0.15);
+  font-size: 100px;
+  font-weight: 100;
+  margin: 0;
+}
+
+.Container {
+  background: white;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);
+  margin-top: 30px;
+}
+
+.Footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  height: 40px;
+  color: #777;
+  font-size: 14px;
+  border-top: 1px solid #e6e6e6;
+}
