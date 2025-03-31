@@ -1,14 +1,18 @@
-import { useState } from 'react';
 import styles from './App.module.css';
 import Input from './components/Input/Input';
+import List from './components/List/List';
+import { TaskProvider } from './context/TaskContext';
 
 function App() {
   return (
-    <div className={styles.App}>
-      <h1 className={styles.title}>todos</h1>
+    <TaskProvider>
+      <div className={styles.App}>
+        <h1 className={styles.title}>todos</h1>
 
-      <Input />
-    </div>
+        <Input />
+        <List />
+      </div>
+    </TaskProvider>
   );
 }
 

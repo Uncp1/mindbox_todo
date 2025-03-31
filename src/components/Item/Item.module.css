@@ -1,0 +1,70 @@
+/* src/components/TodoItem/TodoItem.module.css */
+.item {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  border-bottom: 1px solid var(--border-color);
+  font-size: 24px;
+  color: var(--todo-text);
+  text-align: left;
+  position: relative;
+  transition: border-color 0.3s, color 0.3s, background-color 0.3s;
+}
+
+.todoItem:hover {
+  background-color: var(--todo-hover-bg);
+}
+
+.todoItem:hover .deleteButton {
+  opacity: 1;
+}
+
+.checkbox {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 20px;
+  border: 1px solid var(--checkbox-border);
+  background: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: border-color 0.3s, background-color 0.3s, color 0.3s;
+}
+
+.checkbox.checked {
+  color: white;
+  background-color: var(--checkbox-checked-bg);
+  border-color: var(--checkbox-checked-border);
+}
+
+.completed {
+  color: var(--completed-text);
+  text-decoration: line-through;
+  transition: color 0.3s;
+}
+
+.deleteButton {
+  position: absolute;
+  right: 10px;
+  color: var(--delete-button-color);
+  background: none;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+  opacity: 0;
+  transition: color 0.3s, opacity 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+}
+
+.deleteButton:hover {
+  color: var(--delete-button-hover);
+}

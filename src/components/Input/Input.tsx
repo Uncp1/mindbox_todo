@@ -1,11 +1,16 @@
 import React, { useState } from 'react';
 import styles from './Input.module.css';
+import { useTaskContext } from '../../context/TaskContext';
 
 const Input: React.FC = () => {
   const [value, setValue] = useState('');
+  const { addTask } = useTaskContext();
 
   const handleAddValue = () => {
-    console.log(value);
+    if (value.trim()) {
+      addTask(value);
+      setValue('');
+    }
   };
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
