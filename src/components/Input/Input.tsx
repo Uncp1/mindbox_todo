@@ -32,7 +32,7 @@ const Input: React.FC = () => {
         className={styles.input}
       />
       <button
-        className={styles.addButton}
+        className={styles.input__button}
         onClick={handleAddValue}
         data-testid="add-button"
         aria-label="Add todo"
