@@ -1,4 +1,3 @@
-/* src/components/TodoFilters/TodoFilters.module.css */
 .filter__container {
   display: flex;
   gap: 8px;
@@ -7,7 +6,7 @@
 .filter__button {
   background: none;
   border: 1px solid transparent;
-  color: var(--filter-text);
+  color: var(--text-secondary);
   padding: 3px 7px;
   border-radius: 3px;
   cursor: pointer;
@@ -15,11 +14,11 @@
 }
 
 .filter__button:hover {
-  border-color: var(--filter-hover-border);
+  border-color: var(--accent);
 }
 
 .filter__button.active {
-  border-color: var(--filter-active-border);
+  border-color: var(--accent);
 }
 
 .filter__clear {
@@ -33,5 +32,5 @@
 
 .filter__clear:hover {
   text-decoration: underline;
-  color: var(--clear-hover);
+  color: var(--text-color);
 }

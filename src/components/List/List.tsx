@@ -6,7 +6,7 @@ import { useTaskContext } from '../../context/TaskContext';
 const List: React.FC = () => {
   const { filteredTasks } = useTaskContext();
   return (
-    <div className={styles.todoList} data-testid="todo-list">
+    <div className={styles.list} data-testid="todo-list">
       {filteredTasks.map((task) => (
         <Item key={task.id} task={task} />
       ))}

@@ -1,0 +1,5 @@
+list {
+  width: 100%;
+  background-color: var(--container-bg);
+  transition: background-color 0.3s;
+}

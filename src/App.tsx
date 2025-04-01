@@ -3,20 +3,30 @@ import Counter from './components/Counter/Counter';
 import Filter from './components/Filter/Filter';
 import Input from './components/Input/Input';
 import List from './components/List/List';
-import { TaskProvider } from './context/TaskContext';
+import ThemeToggle from './components/ThemeToggle/ThemeToggle';
+import { useTaskContext } from './context/TaskContext';
 
 function App() {
-  return (
-    <TaskProvider>
-      <div className={styles.App}>
-        <h1 className={styles.title}>todos</h1>
+  const { filteredTasks } = useTaskContext();
 
+  return (
+    <div className={styles.app}>
+      <h1 className={styles.title}>todos</h1>
+      <ThemeToggle />
+      <div className={styles.content}>
         <Input />
-        <List />
-        <Filter />
-        <Counter />
+
+        {filteredTasks.length > 0 && (
+          <>
+            <List />
+            <div className={styles.filter}>
+              <Filter />
+              <Counter />
+            </div>
+          </>
+        )}
       </div>
-    </TaskProvider>
+    </div>
   );
 }
 

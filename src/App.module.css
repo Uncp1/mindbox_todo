@@ -1,29 +1,42 @@
-.App {
+.app {
   width: 550px;
   margin: 0 auto;
   text-align: center;
+  padding: 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
 }
 
 .title {
-  color: rgba(175, 47, 47, 0.15);
   font-size: 100px;
   font-weight: 100;
-  margin: 0;
+  margin: 40px 0 20px;
+  color: var(--accent);
+  transition: color 0.3s;
 }
 
-.Container {
-  background: white;
+.content {
+  background: var(--container-bg);
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);
   margin-top: 30px;
+  width: 100%;
+  position: relative;
+  transition: background-color 0.3s, box-shadow 0.3s;
 }
 
-.Footer {
+.filter {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px 15px;
   height: 40px;
-  color: #777;
   font-size: 14px;
-  border-top: 1px solid #e6e6e6;
+  border-top: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  transition: border-color 0.3s, color 0.3s;
 }

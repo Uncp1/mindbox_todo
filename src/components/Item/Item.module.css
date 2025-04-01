@@ -1,21 +1,20 @@
-/* src/components/TodoItem/TodoItem.module.css */
 .item {
   display: flex;
   align-items: center;
   padding: 15px;
   border-bottom: 1px solid var(--border-color);
   font-size: 24px;
-  color: var(--todo-text);
+  color: var(--text-color);
   text-align: left;
   position: relative;
   transition: border-color 0.3s, color 0.3s, background-color 0.3s;
 }
 
-.todoItem:hover {
-  background-color: var(--todo-hover-bg);
+.item:hover {
+  background-color: var(--hover-bg);
 }
 
-.todoItem:hover .deleteButton {
+.item:hover .deleteButton {
   opacity: 1;
 }
 
@@ -24,7 +23,7 @@
   height: 30px;
   border-radius: 50%;
   margin-right: 20px;
-  border: 1px solid var(--checkbox-border);
+  border: 1px solid var(--border-color);
   background: none;
   display: flex;
   align-items: center;
@@ -38,12 +37,12 @@
 
 .checkbox.checked {
   color: white;
-  background-color: var(--checkbox-checked-bg);
-  border-color: var(--checkbox-checked-border);
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
 }
 
 .completed {
-  color: var(--completed-text);
+  color: var(--text-dim);
   text-decoration: line-through;
   transition: color 0.3s;
 }
@@ -51,7 +50,7 @@
 .deleteButton {
   position: absolute;
   right: 10px;
-  color: var(--delete-button-color);
+  color: var(--delete-btn);
   background: none;
   border: none;
   font-size: 28px;
@@ -66,5 +65,5 @@
 }
 
 .deleteButton:hover {
-  color: var(--delete-button-hover);
+  color: var(--delete-btn-hover);
 }
