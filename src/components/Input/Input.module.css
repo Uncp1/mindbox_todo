@@ -6,14 +6,31 @@
   transition: border-color 0.3s;
 }
 
-.icon {
+.toggleButton {
   position: absolute;
-  color: var(--icon-color);
-  top: 19px;
   left: 16px;
-  transform: rotate(90deg);
+  background: none;
+  border: none;
+  color: var(--icon-color);
   font-size: 22px;
-  transition: color 0.3s;
+  transform: rotate(90deg);
+  transition: transform 0.3s ease, color 0.3s;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  padding: 0;
+}
+
+.toggleButton:hover {
+  color: var(--primary-color);
+}
+
+.toggleButton.rotated {
+  transform: rotate(-90deg);
 }
 
 .input {
@@ -30,12 +47,12 @@
 }
 
 .input::placeholder {
-  color: var(--placeholder-color);
+  color: var(--text-dim);
   font-style: italic;
   transition: color 0.3s;
 }
 
-.addButton {
+.input__button {
   position: absolute;
   right: 16px;
   background: none;
@@ -53,12 +70,12 @@
   outline: none;
 }
 
-.addButton:hover {
+.input__button:hover {
   background-color: var(--button-hover-bg);
   color: var(--button-hover-text);
   border-color: var(--button-hover-border);
 }
 
-.addButton:active {
+.input__button:active {
   transform: scale(0.95);
 }

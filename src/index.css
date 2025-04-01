@@ -15,6 +15,8 @@
   --light-hover-bg: #fafafa;
   --light-delete-btn: #cc9a9a;
   --light-delete-btn-hover: #af5b5e;
+  --light-edit-btn: #85c3ba;
+  --light-edit-btn-hover: #5dc2af;
 
   /* Темная тема */
   --dark-bg: #1a1a1a;
@@ -27,6 +29,8 @@
   --dark-hover-bg: #363636;
   --dark-delete-btn: #888;
   --dark-delete-btn-hover: #cc9a9a;
+  --dark-edit-btn: #6b9e94;
+  --dark-edit-btn-hover: #5dc2af;
 
   /* Переменные по умолчанию для светлой темы */
   --bg-color: var(--light-bg);
@@ -39,6 +43,8 @@
   --hover-bg: var(--light-hover-bg);
   --delete-btn: var(--light-delete-btn);
   --delete-btn-hover: var(--light-delete-btn-hover);
+  --edit-btn: var(--light-edit-btn);
+  --edit-btn-hover: var(--light-edit-btn-hover);
   --accent: var(--accent-color);
 }
 
@@ -54,6 +60,8 @@
   --hover-bg: var(--dark-hover-bg);
   --delete-btn: var(--dark-delete-btn);
   --delete-btn-hover: var(--dark-delete-btn-hover);
+  --edit-btn: var(--dark-edit-btn);
+  --edit-btn-hover: var(--dark-edit-btn-hover);
   --accent: var(--accent-color-dark);
 }
 

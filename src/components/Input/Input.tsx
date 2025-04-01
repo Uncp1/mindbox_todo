@@ -2,7 +2,15 @@ import React, { useState } from 'react';
 import styles from './Input.module.css';
 import { useTaskContext } from '../../context/TaskContext';
 
-const Input: React.FC = () => {
+interface InputProps {
+  toggleListVisibility: () => void;
+  isListVisible: boolean;
+}
+
+const Input: React.FC<InputProps> = ({
+  toggleListVisibility,
+  isListVisible,
+}) => {
   const [value, setValue] = useState('');
   const { addTask } = useTaskContext();
 
@@ -21,7 +29,17 @@ const Input: React.FC = () => {
 
   return (
     <div className={styles.container}>
-      <span className={styles.icon}>❯</span>
+      <button
+        className={`${styles.toggleButton} ${
+          isListVisible ? styles.rotated : ''
+        }`}
+        onClick={toggleListVisibility}
+        aria-label={isListVisible ? 'Collapse list' : 'Expand list'}
+        data-testid="toggle-list-button"
+      >
+        ❯
+      </button>
+
       <input
         type="text"
         placeholder="What needs to be done?"
@@ -31,8 +49,9 @@ const Input: React.FC = () => {
         data-testid="input"
         className={styles.input}
       />
+
       <button
-        className={styles.addButton}
+        className={styles.input__button}
         onClick={handleAddValue}
         data-testid="add-button"
         aria-label="Add todo"

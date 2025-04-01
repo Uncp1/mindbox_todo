@@ -10,6 +10,7 @@ interface TaskContextType {
   addTask: (text: string) => void;
   toggleTask: (id: string) => void;
   deleteTask: (id: string) => void;
+  updateTaskText: (id: string, newText: string) => void;
   setFilter: (filter: TaskFilter) => void;
   clearCompleted: () => void;
 }
