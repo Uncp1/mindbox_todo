@@ -2,7 +2,6 @@ import { render, screen } from '@testing-library/react';
 import Counter from '../../components/Counter/Counter';
 import { TaskProvider } from '../../context/TaskContext';
 
-// Mock useTaskContext values
 jest.mock('../../context/TaskContext', () => {
   const originalModule = jest.requireActual('../../context/TaskContext');
   return {
@@ -42,7 +41,6 @@ describe('Counter Component', () => {
   });
 
   test('renders with zero items remaining', () => {
-    // Override the mock for this specific test
     jest
       .spyOn(require('../../context/TaskContext'), 'useTaskContext')
       .mockReturnValue({
