@@ -1,4 +1,6 @@
 import styles from './App.module.css';
+import Counter from './components/Counter/Counter';
+import Filter from './components/Filter/Filter';
 import Input from './components/Input/Input';
 import List from './components/List/List';
 import { TaskProvider } from './context/TaskContext';
@@ -11,6 +13,8 @@ function App() {
 
         <Input />
         <List />
+        <Filter />
+        <Counter />
       </div>
     </TaskProvider>
   );

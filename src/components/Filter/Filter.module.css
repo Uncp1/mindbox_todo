@@ -1,0 +1,37 @@
+/* src/components/TodoFilters/TodoFilters.module.css */
+.filter__container {
+  display: flex;
+  gap: 8px;
+}
+
+.filter__button {
+  background: none;
+  border: 1px solid transparent;
+  color: var(--filter-text);
+  padding: 3px 7px;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: border-color 0.3s, color 0.3s;
+}
+
+.filter__button:hover {
+  border-color: var(--filter-hover-border);
+}
+
+.filter__button.active {
+  border-color: var(--filter-active-border);
+}
+
+.filter__clear {
+  background: none;
+  border: none;
+  color: var(--clear-text);
+  cursor: pointer;
+  margin-left: 20px;
+  transition: color 0.3s;
+}
+
+.filter__clear:hover {
+  text-decoration: underline;
+  color: var(--clear-hover);
+}
