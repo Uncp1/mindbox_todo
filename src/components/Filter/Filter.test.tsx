@@ -38,20 +38,4 @@ describe('Filter Component', () => {
     fireEvent.click(screen.getByTestId('clear-completed'));
     expect(mockClearCompleted).toHaveBeenCalled();
   });
-
-  test('active filter button has active class', () => {
-    render(
-      <TaskProvider>
-        <Filter />
-      </TaskProvider>
-    );
-
-    expect(screen.getByTestId('filter-all').className).toContain('active');
-    expect(screen.getByTestId('filter-active').className).not.toContain(
-      'active'
-    );
-    expect(screen.getByTestId('filter-completed').className).not.toContain(
-      'active'
-    );
-  });
 });

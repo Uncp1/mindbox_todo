@@ -1,54 +1,62 @@
-# React + TypeScript + Vite
+# Todo приложение на React + TypeScript
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![React](https://img.shields.io/badge/React-19.0.0-blue)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.7-blue)
+![Tests](https://img.shields.io/badge/Tests-Jest-green)
 
-Currently, two official plugins are available:
+Приложение список задач, созданное с помощью React, TypeScript и Vite. Приложение поддерживает темную и светлую темы, а также включает полный набор функций для управления задачами.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Запуск проекта
 
-## Expanding the ESLint configuration
+1. Клонируйте репозиторий:
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```bash
+git clone https://github.com/ваш-username/react-todo-app.git
+cd react-todo-app
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+2. Установите зависимости:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+```bash
+npm install
 ```
+
+3. Запустите проект в режиме разработки:
+
+```bash
+npm run dev
+```
+
+4. Откройте [http://localhost:5173](http://localhost:5173) в браузере
+
+## 🛠️ Скрипты
+
+- `npm run dev` - запуск сервера разработки
+- `npm run build` - сборка приложения для продакшена
+- `npm run lint` - проверка кода линтером
+- `npm run test` - запуск тестов
+
+## 🧪 Тестирование
+
+Проект включает тесты с использованием Jest и React Testing Library. Для запуска тестов выполните:
+
+```bash
+npm run test
+```
+
+## ✨ Особенности реализации
+
+- **TypeScript** для статической типизации
+- **React Context API** для управления состоянием
+- **Jest & Testing Library** для тестирования
+- **Vite** для быстрой разработки и сборки
+- **LocalStorage** для хранения задач между сессиями
+- **Темная/светлая тема** с автоматическим сохранением предпочтений
+
+## 📄 Лицензия
+
+Этот проект распространяется под лицензией MIT
+
+---
+
+Сделано с ❤️ и React! 🚀

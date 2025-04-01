@@ -24,7 +24,6 @@ describe('Counter Component', () => {
   });
 
   test('renders with a single item remaining', () => {
-    // Override the mock for this specific test
     jest
       .spyOn(require('../../context/TaskContext'), 'useTaskContext')
       .mockReturnValue({

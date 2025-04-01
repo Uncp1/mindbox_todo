@@ -36,7 +36,6 @@ const Item: React.FC<TaskItemProps> = ({ task }) => {
   };
 
   const handleEditCancel = () => {
-    // Cancel editing and revert to original text
     setEditText(task.text);
     setIsEditing(false);
   };
