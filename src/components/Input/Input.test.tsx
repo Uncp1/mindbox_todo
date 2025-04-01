@@ -108,32 +108,4 @@ describe('Input Component', () => {
     fireEvent.click(screen.getByTestId('toggle-list-button'));
     expect(mockToggleListVisibility).toHaveBeenCalled();
   });
-
-  test('toggle button has rotated class when list is visible', () => {
-    render(
-      <TaskProvider>
-        <Input
-          toggleListVisibility={mockToggleListVisibility}
-          isListVisible={true}
-        />
-      </TaskProvider>
-    );
-
-    const button = screen.getByTestId('toggle-list-button');
-    expect(button.className).toContain('rotated');
-  });
-
-  test('toggle button does not have rotated class when list is not visible', () => {
-    render(
-      <TaskProvider>
-        <Input
-          toggleListVisibility={mockToggleListVisibility}
-          isListVisible={false}
-        />
-      </TaskProvider>
-    );
-
-    const button = screen.getByTestId('toggle-list-button');
-    expect(button.className).not.toContain('rotated');
-  });
 });

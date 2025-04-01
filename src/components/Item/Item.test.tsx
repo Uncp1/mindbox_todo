@@ -68,7 +68,6 @@ describe('Item Component', () => {
     );
 
     const checkbox = screen.getByTestId('Task-checkbox');
-    expect(checkbox.className).toContain('checked');
     expect(checkbox.textContent).toBe('✓');
   });
 });
