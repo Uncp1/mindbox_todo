@@ -56,6 +56,7 @@ export const useTasks = () => {
   });
 
   const remainingCount = tasks.filter((task) => !task.completed).length;
+  const hasCompletedTasks = tasks.some((task) => task.completed);
 
   return {
     tasks,
@@ -68,5 +69,6 @@ export const useTasks = () => {
     clearCompleted,
     filteredTasks,
     remainingCount,
+    hasCompletedTasks,
   };
 };

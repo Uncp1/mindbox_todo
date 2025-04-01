@@ -3,7 +3,8 @@ import { useTaskContext } from '../../context/TaskContext';
 import styles from './Filter.module.css';
 
 const Filter: React.FC = () => {
-  const { filter, setFilter, clearCompleted } = useTaskContext();
+  const { filter, setFilter, clearCompleted, hasCompletedTasks } =
+    useTaskContext();
 
   return (
     <div className={styles.filter__container} data-testid="filter-container">
@@ -34,13 +35,16 @@ const Filter: React.FC = () => {
       >
         Completed
       </button>
-      <button
-        className={styles.filter__clear}
-        onClick={clearCompleted}
-        data-testid="clear-completed"
-      >
-        Clear completed
-      </button>
+
+      {hasCompletedTasks && (
+        <button
+          className={styles.filter__clear}
+          onClick={clearCompleted}
+          data-testid="clear-completed"
+        >
+          Clear completed
+        </button>
+      )}
     </div>
   );
 };

@@ -1,75 +1,70 @@
 :root {
-  --primary-color: #5dc2af;
-  --primary-color-hover: #4aab98;
-  --accent-color: rgba(175, 47, 47, 0.15);
-  --accent-color-dark: rgba(175, 47, 47, 0.3);
+  /* основные цвета */
+  --primary: #5dc2af;
+  --primary-light: #85c3ba;
+  --primary-dark: #4aab98;
+  --accent: rgba(175, 47, 47, 0.15);
+  --accent-dark: rgba(175, 47, 47, 0.3);
 
-  /* Светлая тема */
-  --light-bg: #f5f5f5;
-  --light-container-bg: white;
-  --light-text: #4d4d4d;
-  --light-text-secondary: #777;
-  --light-text-dim: #d9d9d9;
-  --light-border: #ededed;
-  --light-icon: #e6e6e6;
-  --light-hover-bg: #fafafa;
-  --light-delete-btn: #cc9a9a;
-  --light-delete-btn-hover: #af5b5e;
-  --light-edit-btn: #85c3ba;
-  --light-edit-btn-hover: #5dc2af;
+  /* светлая тема по умолчанию */
+  --bg: #f5f5f5;
+  --surface: #ffffff;
+  --text: #4d4d4d;
+  --text-secondary: #777777;
+  --text-dim: #d9d9d9;
+  --border: #ededed;
+  --icon: #e6e6e6;
+  --hover: #fafafa;
+  --delete: #cc9a9a;
+  --delete-hover: #af5b5e;
 
-  /* Темная тема */
-  --dark-bg: #1a1a1a;
-  --dark-container-bg: #2a2a2a;
-  --dark-text: #e6e6e6;
-  --dark-text-secondary: #888;
-  --dark-text-dim: #777;
-  --dark-border: #444;
-  --dark-icon: #666;
-  --dark-hover-bg: #363636;
-  --dark-delete-btn: #888;
-  --dark-delete-btn-hover: #cc9a9a;
-  --dark-edit-btn: #6b9e94;
-  --dark-edit-btn-hover: #5dc2af;
-
-  /* Переменные по умолчанию для светлой темы */
-  --bg-color: var(--light-bg);
-  --container-bg: var(--light-container-bg);
-  --text-color: var(--light-text);
-  --text-secondary: var(--light-text-secondary);
-  --text-dim: var(--light-text-dim);
-  --border-color: var(--light-border);
-  --icon-color: var(--light-icon);
-  --hover-bg: var(--light-hover-bg);
-  --delete-btn: var(--light-delete-btn);
-  --delete-btn-hover: var(--light-delete-btn-hover);
-  --edit-btn: var(--light-edit-btn);
-  --edit-btn-hover: var(--light-edit-btn-hover);
-  --accent: var(--accent-color);
+  --transition-standard: 0.3s;
 }
 
-/* Темная тема */
+/* темная тема */
 [data-theme='dark'] {
-  --bg-color: var(--dark-bg);
-  --container-bg: var(--dark-container-bg);
-  --text-color: var(--dark-text);
-  --text-secondary: var(--dark-text-secondary);
-  --text-dim: var(--dark-text-dim);
-  --border-color: var(--dark-border);
-  --icon-color: var(--dark-icon);
-  --hover-bg: var(--dark-hover-bg);
-  --delete-btn: var(--dark-delete-btn);
-  --delete-btn-hover: var(--dark-delete-btn-hover);
-  --edit-btn: var(--dark-edit-btn);
-  --edit-btn-hover: var(--dark-edit-btn-hover);
-  --accent: var(--accent-color-dark);
+  --bg: #1a1a1a;
+  --surface: #2a2a2a;
+  --text: #e6e6e6;
+  --text-secondary: #888888;
+  --text-dim: #777777;
+  --border: #444444;
+  --icon: #666666;
+  --hover: #363636;
+  --delete: #888888;
+  --delete-hover: #cc9a9a;
+  --accent: rgba(175, 47, 47, 0.3);
+}
+
+html {
+  font-size: 16px;
+  -webkit-tap-highlight-color: transparent;
 }
 
 body {
   margin: 0;
   font-family: 'Helvetica Neue', Arial, sans-serif;
   padding: 0;
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  transition: background-color 0.3s, color 0.3s;
+  background-color: var(--bg);
+  color: var(--text);
+  transition: background-color var(--transition-standard),
+    color var(--transition-standard);
+  width: 100%;
+  min-height: 100vh;
+}
+
+* {
+  box-sizing: border-box;
+  touch-action: manipulation;
+}
+
+button,
+input[type='text'] {
+  touch-action: manipulation;
+}
+
+@media (max-width: 600px) {
+  html {
+    font-size: 14px;
+  }
 }

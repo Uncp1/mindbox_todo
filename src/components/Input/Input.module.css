@@ -1,20 +1,21 @@
 .container {
   position: relative;
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border);
   display: flex;
   align-items: center;
-  transition: border-color 0.3s;
+  transition: border-color var(--transition-standard);
 }
 
-.toggleButton {
+.input__toggle {
   position: absolute;
-  left: 16px;
+  left: 8px;
   background: none;
   border: none;
-  color: var(--icon-color);
+  color: var(--icon);
   font-size: 22px;
   transform: rotate(90deg);
-  transition: transform 0.3s ease, color 0.3s;
+  transition: transform var(--transition-standard) ease,
+    color var(--transition-standard);
   cursor: pointer;
   width: 30px;
   height: 30px;
@@ -25,45 +26,47 @@
   padding: 0;
 }
 
-.toggleButton:hover {
-  color: var(--primary-color);
+.input__toggle:hover {
+  color: var(--primary);
 }
 
-.toggleButton.rotated {
+.input__toggle.rotated {
   transform: rotate(-90deg);
 }
 
 .input {
   width: 100%;
-  padding: 16px 16px 16px 60px;
+  padding: 16px 16px 16px 44px;
   border: none;
-  font-size: 24px;
+  font-size: clamp(16px, 5vw, 24px);
   box-sizing: border-box;
   outline: none;
   font-weight: 300;
-  color: var(--input-text);
-  background-color: var(--input-bg);
-  transition: color 0.3s, background-color 0.3s;
+  color: var(--text);
+  background-color: var(--surface);
+  transition: color var(--transition-standard),
+    background-color var(--transition-standard);
 }
 
 .input::placeholder {
   color: var(--text-dim);
   font-style: italic;
-  transition: color 0.3s;
+  transition: color var(--transition-standard);
+  font-size: clamp(14px, 4vw, 20px);
 }
 
 .input__button {
   position: absolute;
-  right: 16px;
+  right: 8px;
   background: none;
-  border: 1px solid var(--button-border);
+  border: 1px solid var(--border);
   border-radius: 50%;
   width: 32px;
   height: 32px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--button-text);
+  color: var(--text-secondary);
   font-size: 20px;
   cursor: pointer;
   transition: all 0.2s;
@@ -71,11 +74,25 @@
 }
 
 .input__button:hover {
-  background-color: var(--button-hover-bg);
-  color: var(--button-hover-text);
-  border-color: var(--button-hover-border);
+  background-color: var(--hover);
+  color: var(--primary);
+  border-color: var(--primary);
 }
 
 .input__button:active {
   transform: scale(0.95);
+}
+
+@media (min-width: 600px) {
+  .input__toggle {
+    left: 16px;
+  }
+
+  .input {
+    padding: 16px 16px 16px 60px;
+  }
+
+  .input__button {
+    right: 16px;
+  }
 }
