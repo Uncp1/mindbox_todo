@@ -30,7 +30,7 @@ const Input: React.FC<InputProps> = ({
   return (
     <div className={styles.container}>
       <button
-        className={`${styles.toggleButton} ${
+        className={`${styles.input__toggle} ${
           isListVisible ? styles.rotated : ''
         }`}
         onClick={toggleListVisibility}
@@ -48,6 +48,7 @@ const Input: React.FC<InputProps> = ({
         onKeyDown={handleKeyDown}
         data-testid="input"
         className={styles.input}
+        maxLength={100}
       />
 
       <button

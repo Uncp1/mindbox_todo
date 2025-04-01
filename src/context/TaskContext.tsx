@@ -7,6 +7,7 @@ interface TaskContextType {
   filter: TaskFilter;
   filteredTasks: Task[];
   remainingCount: number;
+  hasCompletedTasks: boolean;
   addTask: (text: string) => void;
   toggleTask: (id: string) => void;
   deleteTask: (id: string) => void;

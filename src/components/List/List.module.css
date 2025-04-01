@@ -1,5 +1,5 @@
-list {
+.list {
   width: 100%;
-  background-color: var(--container-bg);
-  transition: background-color 0.3s;
+  background-color: var(--surface);
+  transition: background-color var(--transition-standard);
 }

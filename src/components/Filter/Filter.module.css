@@ -1,6 +1,9 @@
 .filter__container {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 8px;
+  width: 100%;
 }
 
 .filter__button {
@@ -10,7 +13,8 @@
   padding: 3px 7px;
   border-radius: 3px;
   cursor: pointer;
-  transition: border-color 0.3s, color 0.3s;
+  transition: border-color var(--transition-standard),
+    color var(--transition-standard);
 }
 
 .filter__button:hover {
@@ -24,13 +28,25 @@
 .filter__clear {
   background: none;
   border: none;
-  color: var(--clear-text);
+  color: var(--text-secondary);
   cursor: pointer;
-  margin-left: 20px;
-  transition: color 0.3s;
+  margin-top: 5px;
+  transition: color var(--transition-standard);
 }
 
 .filter__clear:hover {
   text-decoration: underline;
-  color: var(--text-color);
+  color: var(--text);
+}
+
+@media (min-width: 600px) {
+  .filter__container {
+    justify-content: flex-start;
+    width: auto;
+  }
+
+  .filter__clear {
+    margin-top: 0;
+    margin-left: 20px;
+  }
 }
