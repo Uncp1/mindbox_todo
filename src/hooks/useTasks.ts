@@ -31,6 +31,16 @@ export const useTasks = () => {
     );
   };
 
+  const updateTaskText = (id: string, newText: string) => {
+    if (newText.trim()) {
+      setTasks(
+        tasks.map((task) =>
+          task.id === id ? { ...task, text: newText } : task
+        )
+      );
+    }
+  };
+
   const deleteTask = (id: string) => {
     setTasks(tasks.filter((task) => task.id !== id));
   };
@@ -53,6 +63,7 @@ export const useTasks = () => {
     filter,
     setFilter,
     toggleTask,
+    updateTaskText,
     deleteTask,
     clearCompleted,
     filteredTasks,

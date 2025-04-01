@@ -14,13 +14,14 @@
   background-color: var(--hover-bg);
 }
 
-.item:hover .deleteButton {
+.item:hover .actions {
   opacity: 1;
 }
 
 .checkbox {
   width: 30px;
   height: 30px;
+  min-width: 30px; /* Prevent checkbox from shrinking */
   border-radius: 50%;
   margin-right: 20px;
   border: 1px solid var(--border-color);
@@ -41,29 +42,127 @@
   border-color: var(--primary-color);
 }
 
+.taskText {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .completed {
   color: var(--text-dim);
   text-decoration: line-through;
   transition: color 0.3s;
 }
 
-.deleteButton {
-  position: absolute;
-  right: 10px;
-  color: var(--delete-btn);
+.actions {
+  display: flex;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.editButton {
+  color: var(--edit-btn);
   background: none;
   border: none;
-  font-size: 28px;
+  font-size: 20px;
   cursor: pointer;
-  opacity: 0;
-  transition: color 0.3s, opacity 0.3s;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 30px;
   height: 30px;
+  min-width: 30px;
+  margin-right: 5px;
+  transition: color 0.3s;
+}
+
+.editButton:hover {
+  color: var(--edit-btn-hover);
+}
+
+.deleteButton {
+  color: var(--delete-btn);
+  background: none;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  min-width: 30px;
+  transition: color 0.3s;
 }
 
 .deleteButton:hover {
   color: var(--delete-btn-hover);
+}
+
+.editContainer {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.editInput {
+  flex: 1;
+  font-size: 24px;
+  padding: 8px 12px;
+  border: 2px solid var(--primary-color);
+  border-radius: 4px;
+  outline: none;
+  color: var(--text-color);
+  background-color: var(--input-bg);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s;
+}
+
+.editInput:focus {
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+}
+
+.editActions {
+  display: flex;
+  margin-left: 10px;
+}
+
+.saveButton,
+.cancelButton {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin-left: 5px;
+  border: none;
+  transition: all 0.2s;
+}
+
+.saveButton {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.saveButton:hover {
+  background-color: var(--primary-color-hover);
+  transform: scale(1.05);
+}
+
+.cancelButton {
+  background-color: var(--delete-btn);
+  color: white;
+}
+
+.cancelButton:hover {
+  background-color: var(--delete-btn-hover);
+  transform: scale(1.05);
+}
+
+.saveButton:active,
+.cancelButton:active {
+  transform: scale(0.95);
 }
