@@ -1,68 +1,67 @@
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+  --primary-color: #5dc2af;
+  --primary-color-hover: #4aab98;
+  --accent-color: rgba(175, 47, 47, 0.15);
+  --accent-color-dark: rgba(175, 47, 47, 0.3);
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  /* Светлая тема */
+  --light-bg: #f5f5f5;
+  --light-container-bg: white;
+  --light-text: #4d4d4d;
+  --light-text-secondary: #777;
+  --light-text-dim: #d9d9d9;
+  --light-border: #ededed;
+  --light-icon: #e6e6e6;
+  --light-hover-bg: #fafafa;
+  --light-delete-btn: #cc9a9a;
+  --light-delete-btn-hover: #af5b5e;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  /* Темная тема */
+  --dark-bg: #1a1a1a;
+  --dark-container-bg: #2a2a2a;
+  --dark-text: #e6e6e6;
+  --dark-text-secondary: #888;
+  --dark-text-dim: #777;
+  --dark-border: #444;
+  --dark-icon: #666;
+  --dark-hover-bg: #363636;
+  --dark-delete-btn: #888;
+  --dark-delete-btn-hover: #cc9a9a;
+
+  /* Переменные по умолчанию для светлой темы */
+  --bg-color: var(--light-bg);
+  --container-bg: var(--light-container-bg);
+  --text-color: var(--light-text);
+  --text-secondary: var(--light-text-secondary);
+  --text-dim: var(--light-text-dim);
+  --border-color: var(--light-border);
+  --icon-color: var(--light-icon);
+  --hover-bg: var(--light-hover-bg);
+  --delete-btn: var(--light-delete-btn);
+  --delete-btn-hover: var(--light-delete-btn-hover);
+  --accent: var(--accent-color);
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+/* Темная тема */
+[data-theme='dark'] {
+  --bg-color: var(--dark-bg);
+  --container-bg: var(--dark-container-bg);
+  --text-color: var(--dark-text);
+  --text-secondary: var(--dark-text-secondary);
+  --text-dim: var(--dark-text-dim);
+  --border-color: var(--dark-border);
+  --icon-color: var(--dark-icon);
+  --hover-bg: var(--dark-hover-bg);
+  --delete-btn: var(--dark-delete-btn);
+  --delete-btn-hover: var(--dark-delete-btn-hover);
+  --accent: var(--accent-color-dark);
 }
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  padding: 0;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
 }

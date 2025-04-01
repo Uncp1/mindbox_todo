@@ -1,0 +1,4 @@
+.counter {
+  color: var(--text-secondary);
+  transition: color 0.3s;
+}
