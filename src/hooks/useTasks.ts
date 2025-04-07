@@ -49,7 +49,15 @@ export const useTasks = () => {
     setTasks(tasks.filter((task) => !task.completed));
   };
 
-  const filteredTasks = tasks.filter((task) => {
+  const sortedTasks = [...tasks].sort((a, b) => {
+    // сначала сортировка  по завершенности, затем по времени создания
+    if (a.completed && !b.completed) return 1;
+    if (!a.completed && b.completed) return -1;
+
+    return parseInt(b.id) - parseInt(a.id);
+  });
+
+  const filteredTasks = sortedTasks.filter((task) => {
     if (filter === 'active') return !task.completed;
     if (filter === 'completed') return task.completed;
     return true;
@@ -68,6 +76,7 @@ export const useTasks = () => {
     deleteTask,
     clearCompleted,
     filteredTasks,
+    sortedTasks,
     remainingCount,
     hasCompletedTasks,
   };
